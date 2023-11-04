@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://wf2b5h04kake"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_xgr3e"]
+[ext_resource type="Texture2D" uid="uid://cbbrrfebt0ylr" path="res://icon.svg" id="2_x43ct"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5jm0f"]
+size = Vector2(108, 111)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_xgr3e")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_x43ct")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_5jm0f")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
