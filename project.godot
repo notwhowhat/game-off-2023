@@ -11,9 +11,15 @@ config_version=5
 [application]
 
 config/name="game-off-2023"
-run/main_scene="res://tile_map.tscn"
+run/main_scene="res://tutorials/tile_map.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/mode=2
 
 [input]
 
