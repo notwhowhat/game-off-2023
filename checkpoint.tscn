@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://0dkue3aa8dea"]
+
+[ext_resource type="Texture2D" uid="uid://bc5xwoxag7cvk" path="res://art/checkpoint.png" id="1_oq0ll"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_il26d"]
+radius = 40.0
+height = 80.0
+
+[node name="Checkpoint" type="RigidBody2D"]
+gravity_scale = 0.0
+contact_monitor = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_il26d")
+
+[node name="Checkpoint" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("1_oq0ll")

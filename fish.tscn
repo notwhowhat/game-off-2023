@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d30hoi01aefkv"]
+
+[ext_resource type="Texture2D" uid="uid://c61hqetfqh52q" path="res://art/simple_fish.png" id="1_7x6se"]
+[ext_resource type="Script" path="res://fish.gd" id="1_oeqqd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onudp"]
+size = Vector2(96, 72)
+
+[node name="Fish" type="RigidBody2D"]
+mass = 0.01
+gravity_scale = 0.0
+script = ExtResource("1_oeqqd")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_onudp")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-2.27374e-13, 2.27374e-13)
+scale = Vector2(3, 3)
+texture = ExtResource("1_7x6se")
