@@ -4,3 +4,4 @@
 
 [node name="CaveGenerator" type="Node"]
 script = ExtResource("1_2t0y5")
+redraw = true

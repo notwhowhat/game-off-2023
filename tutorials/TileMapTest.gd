@@ -27,10 +27,10 @@ func generate_chunk(position):
 	for x in range(width):
 		for y in range(height):
 			var map = whole_map.get_noise_2d(tile_pos.x + x - width / 2, tile_pos.y + y - height / 2) * 10
-			#set_cell(0, Vector2i(tile_pos.x + x - width / 2, tile_pos.y + y - height / 2),
-			#		 0, Vector2(0, (round((map + 10) / 10))))
 			set_cell(0, Vector2i(tile_pos.x + x - width / 2, tile_pos.y + y - height / 2),
-					 0, Vector2(0, 0))
+					 0, Vector2(0, (round((map + 10) / 10))))
+			#set_cell(0, Vector2i(tile_pos.x + x - width / 2, tile_pos.y + y - height / 2),
+			#		 0, Vector2(0, 0))
 			#set_cell()
 			
 			

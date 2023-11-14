@@ -55,7 +55,6 @@ noise = SubResource("FastNoiseLite_fw68t")
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMapTest" type="TileMap" parent="."]
-visible = false
 tile_set = SubResource("TileSet_mp2g0")
 format = 2
 script = ExtResource("2_ko7a4")

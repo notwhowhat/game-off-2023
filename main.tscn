@@ -9,12 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://dis0u1j4pvewq" path="res://art/tilemap-complex1bit16x.png" id="7_86af5"]
 [ext_resource type="PackedScene" uid="uid://beo0s646jvldn" path="res://cave_generator.tscn" id="8_70li6"]
 
-[sub_resource type="Curve2D" id="Curve2D_fk1u6"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, -576, -320, 0, 0, 0, 0, -576, -328, 0, 0, 0, 0, 576, -320, 0, 0, 0, 0, 576, 320, 0, 0, 0, 0, -576, 320, 0, 0, 0, 0, -576, -320)
-}
-point_count = 6
-
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_67qkl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_efl8d"]
@@ -451,13 +445,27 @@ terrain_set_1/terrain_0/color = Color(0, 0.345098, 1, 1)
 sources/0 = SubResource("TileSetAtlasSource_c4hhm")
 sources/1 = SubResource("TileSetAtlasSource_0lrla")
 
+[sub_resource type="Curve2D" id="Curve2D_fk1u6"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -576, -320, 0, 0, 0, 0, -576, -328, 0, 0, 0, 0, 576, -320, 0, 0, 0, 0, 576, 320, 0, 0, 0, 0, -576, 320, 0, 0, 0, 0, -576, -320)
+}
+point_count = 6
+
 [node name="Main" type="Node"]
 script = ExtResource("1_s3me3")
 fish_scene = ExtResource("3_pcdal")
 
 [node name="World" parent="." instance=ExtResource("1_gh5m8")]
 
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_4683m")
+format = 2
+
+[node name="CaveGenerator" parent="TileMap" instance=ExtResource("8_70li6")]
+noise_persistence = 1.52
+
 [node name="Player" parent="." instance=ExtResource("2_le0id")]
+position = Vector2(-1136, 0)
 
 [node name="Fish" parent="." groups=["fish"] instance=ExtResource("3_pcdal")]
 collision_layer = 2
@@ -474,12 +482,6 @@ rotation = -1.5708
 position = Vector2(272, 0)
 lock_rotation = true
 
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = SubResource("TileSet_4683m")
-format = 2
-
-[node name="CaveGenerator" parent="TileMap" instance=ExtResource("8_70li6")]
-noise_persistence = 1.52
-
+[connection signal="redraw" from="Player" to="TileMap/CaveGenerator" method="_on_player_redraw"]
 [connection signal="spawn_mob" from="Player" to="." method="_on_player_spawn_mob"]
 [connection signal="body_entered" from="Checkpoint" to="." method="_on_checkpoint_body_entered"]

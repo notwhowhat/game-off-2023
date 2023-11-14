@@ -15,11 +15,10 @@ visible = false
 texture = ExtResource("2_x43ct")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_5jm0f")
+disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 
 [node name="SimpleSub" type="Sprite2D" parent="."]
 position = Vector2(-1.13687e-13, -9.53674e-07)
