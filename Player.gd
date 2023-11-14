@@ -8,6 +8,7 @@ var screen_size
 
 func _ready():
 	screen_size = get_viewport_rect().size
+	redraw.emit()
 
 func _physics_process(delta):
 	velocity.x = Input.get_axis("move_left", "move_right")
