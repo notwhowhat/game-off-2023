@@ -1,17 +1,10 @@
 extends Node
 
-@onready var player = get_node("../../Player")
+@onready var player = get_node("../Player")
 
 @export var map_width = 80
 @export var map_height = 50
 
-@export var world_seed = randi()
-@export var noise_octaves = 3
-@export var noise_period = 3
-@export var noise_persistence = 0.7
-@export var noise_lacunarity = 0.4
-
-@export var noise_threshold = 0.5
 @export var redraw: bool:
 	set(value):
 		if self.tile_map == null:
@@ -20,12 +13,20 @@ extends Node
 		generate()
 
 var tile_map: TileMap
-var noise = FastNoiseLite.new()
+@onready var noise = FastNoiseLite.new()
 var prev_gen_tile_coords = {}
 
 
 func _ready():
 	self.tile_map = get_parent() as TileMap
+	self.noise.seed = randi()
+	self.noise.fractal_octaves = 8
+	self.noise.fractal_weighted_strength = 0.7
+	self.noise.fractal_lacunarity = 0.4
+	#self.noise.noise_type = FastNoiseLite.TYPE_PERLIN
+	self.noise.noise_type = FastNoiseLite.TYPE_VALUE_CUBIC
+	self.noise.frequency = 0.03
+	
 	#clear()
 	generate()#Vector2(-1000, 100))
 
@@ -33,11 +34,6 @@ func clear():
 	self.tile_map.clear()
 	
 func generate(pos=Vector2(0, 0)):
-	self.noise.seed = self.world_seed
-	self.noise.fractal_octaves = self.noise_octaves
-	self.noise.fractal_weighted_strength = self.noise_persistence
-	self.noise.fractal_lacunarity = self.noise_lacunarity
-	self.noise.noise_type = FastNoiseLite.TYPE_PERLIN
 	
 	var map_pos = tile_map.local_to_map(pos)
 	

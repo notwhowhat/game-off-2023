@@ -69,7 +69,6 @@ format = 2
 script = ExtResource("2_6go1h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-6.10352e-05, -7.62939e-05)
 scale = Vector2(4.5, 2.53125)
 texture = SubResource("NoiseTexture2D_i61n1")

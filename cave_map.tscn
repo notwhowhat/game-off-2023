@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx7uo0l5vnjmc"]
+
+[ext_resource type="TileSet" uid="uid://dm61raol4poxk" path="res://cave_bgrnd.tres" id="1_1jlb8"]
+[ext_resource type="Script" path="res://src/CaveMap.gd" id="2_1nbwv"]
+
+[node name="CaveMap" type="TileMap"]
+tile_set = ExtResource("1_1jlb8")
+format = 2
+script = ExtResource("2_1nbwv")

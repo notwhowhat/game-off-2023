@@ -3,9 +3,17 @@ extends Node
 @export var fish_scene: PackedScene
 
 @onready var player = $Player
+@onready var noise = $CaveMap.noise
 
 func _ready():
-	spawn_mob()
+	#spawn_mob()
+	print(noise.get_noise_2d(player.position.x, player.position.y))
+	print(noise.get_noise_2d(player.position.x, player.position.y) * 10 + 1 % 2)
+	#while noise.get_noise_2d(player.position.x, player.position.y) * 10 + 1 % 2 > 0:
+	while round(int(noise.get_noise_2d(player.position.x, player.position.y) + 10)) % 2 > 0:
+		player.position.x += 1
+		player.position.y += 1
+		print(player.position)
 	
 func spawn_mob(move=false):
 	# spawn a fish

@@ -1,0 +1,35 @@
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://dm61raol4poxk"]
+
+[ext_resource type="Texture2D" uid="uid://bxtw67ogbr784" path="res://art/cave_tmap32x.png" id="1_qospw"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_isoka"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tuqj7"]
+texture = ExtResource("1_qospw")
+separation = Vector2i(1, 0)
+texture_region_size = Vector2i(32, 32)
+use_texture_padding = false
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:2/0 = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:3/0 = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[resource]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_isoka")
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Wall"
+terrain_set_0/terrain_0/color = Color(0.392157, 0.462745, 0.54902, 1)
+sources/0 = SubResource("TileSetAtlasSource_tuqj7")

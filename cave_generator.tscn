@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://beo0s646jvldn"]
 
-[ext_resource type="Script" path="res://cave_generator.gd" id="1_2t0y5"]
+[ext_resource type="Script" path="res://src/cave_generator.gd" id="1_ak8ty"]
 
 [node name="CaveGenerator" type="Node"]
-script = ExtResource("1_2t0y5")
+script = ExtResource("1_ak8ty")
 redraw = true

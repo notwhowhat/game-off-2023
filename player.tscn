@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://wf2b5h04kake"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_xgr3e"]
+[ext_resource type="Script" path="res://src/Player.gd" id="1_qbb8p"]
 [ext_resource type="Texture2D" uid="uid://cbbrrfebt0ylr" path="res://icon.svg" id="2_x43ct"]
 [ext_resource type="Texture2D" uid="uid://7efk817gtvmn" path="res://art/simple_sub.png" id="3_kwkod"]
 
@@ -9,7 +9,7 @@ size = Vector2(96, 56)
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_xgr3e")
+script = ExtResource("1_qbb8p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
