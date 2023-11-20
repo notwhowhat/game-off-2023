@@ -57,6 +57,7 @@ visible = false
 texture = SubResource("NoiseTexture2D_3sq06")
 script = ExtResource("7_52evv")
 
+[connection signal="spawn_mob" from="CaveMap" to="." method="_on_cave_map_spawn_mob"]
 [connection signal="redraw" from="Player" to="CaveMap" method="_on_player_redraw"]
 [connection signal="spawn_mob" from="Player" to="." method="_on_player_spawn_mob"]
 [connection signal="body_entered" from="Checkpoint" to="." method="_on_checkpoint_body_entered"]

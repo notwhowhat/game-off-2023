@@ -24,7 +24,7 @@ func _ready():
 	self.noise.fractal_weighted_strength = 0.7
 	self.noise.fractal_lacunarity = 0.4
 	#self.noise.noise_type = FastNoiseLite.TYPE_PERLIN
-	self.noise.noise_type = FastNoiseLite.TYPE_VALUE_CUBIC
+	self.noise.noise_type = FastNoiseLite.TYPE_PERLIN
 	self.noise.frequency = 0.03
 	
 	#clear()

@@ -4,23 +4,23 @@ extends Node
 
 @onready var player = $Player
 @onready var noise = $CaveMap.noise
+#@onready var noise = FastNoiseLite.new()
 
 func _ready():
-	#spawn_mob()
 	print(noise.get_noise_2d(player.position.x, player.position.y))
 	print(noise.get_noise_2d(player.position.x, player.position.y) * 10 + 1 % 2)
 	#while noise.get_noise_2d(player.position.x, player.position.y) * 10 + 1 % 2 > 0:
 	while round(int(noise.get_noise_2d(player.position.x, player.position.y) + 10)) % 2 > 0:
-		player.position.x += 1
-		player.position.y += 1
+		player.position.x += $CaveMap.tile_set.tile_size.x
+		#player.position.y += 1
 		print(player.position)
 	
-func spawn_mob(move=false):
+func spawn_mob(spawn_pos=player.position, move=false):
 	# spawn a fish
 	var fish = fish_scene.instantiate()
 	
 	if not move:
-		fish.position = player.position
+		fish.position = spawn_pos #player.position
 	else:
 		var fish_spawn_location = get_node("FishPath/FishSpawnLocation")
 		fish_spawn_location.progress_ratio = randf()
@@ -45,3 +45,7 @@ func _on_checkpoint_body_entered(body):
 
 func _on_player_spawn_mob():
 	spawn_mob()
+
+
+func _on_cave_map_spawn_mob(pos):
+	spawn_mob(pos)
